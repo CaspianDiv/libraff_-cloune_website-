@@ -28,25 +28,6 @@ Modern və funksional kitab mağazası saytının klonudur. Bu proyekt müasir w
 - **Mamba UI** - UI komponentləri
 - **Preline UI** - Əlavə UI elementləri
 
-## 📁 Proyekt Strukturu
-
-```
-libraff-clone/
-│
-├── index.html
-├── css/
-│   ├── style.css
-│   └── tailwind.css
-├── js/
-│   ├── main.js
-│   ├── cart.js
-│   ├── favorites.js
-│   ├── search.js
-│   └── theme.js
-├── images/
-├── assets/
-└── README.md
-```
 
 ## 🔧 Quraşdırma
 
@@ -98,8 +79,8 @@ cd libraff-clone
 
 ## 📸 Ekran Görüntüləri
 
-[![image](https://github.com/user-attachments/assets/f7956e8e-33c1-44e6-8a68-747f4d3c0db0)
-]
+![image](https://github.com/user-attachments/assets/f7956e8e-33c1-44e6-8a68-747f4d3c0db0)
+
 
 ## 🤝 Töhfə
 
@@ -117,9 +98,9 @@ Bu proyekt MIT lisenziyası altındadır. Ətraflı məlumat üçün `LICENSE` f
 
 ## 📞 Əlaqə
 
-**Müəllif**: [Sizin adınız]
-**Email**: [email@example.com]
-**LinkedIn**: [LinkedIn profiliniz]
+**Müəllif**: [Şahin Cəfərzadə(Caspian Div)]
+**Email**: [sahinjafarov996@gmail.com]
+**LinkedIn**: [https://www.linkedin.com/in/shahin-jafarzadeh-3a3772331/]
 
 ## 🙏 Təşəkkürlər
 
