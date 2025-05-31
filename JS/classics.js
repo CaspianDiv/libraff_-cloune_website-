@@ -159,6 +159,52 @@ async function getAllClassicsBooks() {
 };
 getAllClassicsBooks();
 
+const basketList = [];
+window.addBasket = function(id) {
+    const basketElement = booksData.find(item => item.id == id);
+    basketList.push(basketElement);
+    localStorage.setItem('basketList', JSON.stringify(basketList));
+};
+
+
+window.addFav = function(id) {
+  const favList = JSON.parse(localStorage.getItem('favList')) || [];
+  const favElement = booksData.find(item => item.id == id);
+  const heartIcon = document.querySelector(`[onclick="addFav('${id}')"] img`);
+
+  // Favorilərdə olduğunu yoxlamaq 
+
+  const existingIndex = favList.findIndex(item => item.id == id);
+
+  if (existingIndex !== -1) {
+      // Artıq var silinsin 
+
+      favList.splice(existingIndex, 1);
+      heartIcon.style.filter = 'none'; // Normal ürək 
+  } else {
+    // Yoxdusa əlavə olunsun 
+
+      favList.push(favElement);
+      heartIcon.style.filter = 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'; // Qırmızı ürək 
+  };
+
+  localStorage.setItem('favList', JSON.stringify(favList));
+};
+
+// Səhifə yüklənəndə heart Iconların yenilənməsi  
+
+function updateHeartIcons() {
+  const favList = JSON.parse(localStorage.getItem('favList')) || [];
+
+  favList.forEach(favBook => {
+  const heartIcon = document.querySelector(`[onclick="addFav('${favBook.id}')"] img`);
+      if (heartIcon) {
+          heartIcon.style.filter = 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'; /// Qırmızı ürək 
+      };
+  });
+};
+
+
 function printClassicBooks() {
     booksData.forEach(book => {
 
@@ -175,7 +221,7 @@ function printClassicBooks() {
         classicsBooksContainer.innerHTML += `
         <div class="w-56 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer book-card">
             <div class="relative">
-            <div  class="absolute right-5 top-5 hidden heart-icon">
+            <div onclick="addFav('${book.id}')" class="absolute right-5 top-5 hidden heart-icon">
                     <img src="../assets/img/heart.png" class="w-5" />
                 </div>
             </div>
@@ -186,7 +232,7 @@ function printClassicBooks() {
                 <div class="space-y-2">
                 <a href="../details.htm?id=${book.id}"  class="text-lg font-semibold hover:underline">${book.name}</a>
                 </div>
-                <button  class="bg-[#ef3340] w-32 text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
+                <button onclick="addBasket('${book.id}')" class="bg-[#ef3340] w-32 text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
                 <div class="py-5">
                     <span class="font-semibold text-black px-2">${!isNaN(parseFloat(discountPrice)) ? discountPrice + "₼" : "N/A"}</span>
                     <span class="text-gray-400 line-through">${!isNaN(originalPrice) ? originalPrice + "₼" : "N/A"}</span>
@@ -194,7 +240,29 @@ function printClassicBooks() {
             </div>
         </div>
         `
+
+    const bookCards = document.querySelectorAll('.book-card');
+
+    bookCards.forEach(card => {
+        // Hover zamanı heart ikonunu göstərmək
+        card.addEventListener('mouseover', function() {
+            const heartIcon = this.querySelector('.heart-icon');
+            if (heartIcon) {
+                heartIcon.classList.remove('hidden');
+            };
+        });
+        
+        // Mouse çıxdıqda heart ikonunu gizlətmək
+        card.addEventListener('mouseleave', function() {
+            const heartIcon = this.querySelector('.heart-icon');
+            if (heartIcon) {
+                heartIcon.classList.add('hidden');
+            }
+        });
     });
+});
+
+ updateHeartIcons()
 };
 
 // Sol Kateqoriya Div-inin doldurulması 
