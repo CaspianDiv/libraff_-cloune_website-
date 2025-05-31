@@ -4,7 +4,7 @@ Modern və funksional kitab mağazası saytının klonudur. Bu proyekt müasir w
 
 ## 🚀 Canlı Demo
 
-[(https://libraff.netlify.app)]
+(https://libraff.netlify.app)
 
 ## 📋 Xüsusiyyətlər
 
@@ -98,9 +98,9 @@ Bu proyekt MIT lisenziyası altındadır. Ətraflı məlumat üçün `LICENSE` f
 
 ## 📞 Əlaqə
 
-**Müəllif**: [Şahin Cəfərzadə(Caspian Div)]
-**Email**: [sahinjafarov996@gmail.com]
-**LinkedIn**: [https://www.linkedin.com/in/shahin-jafarzadeh-3a3772331/]
+**Müəllif**: Şahin Cəfərzadə(Caspian Div)
+**Email**: sahinjafarov996@gmail.com
+**LinkedIn**: https://www.linkedin.com/in/shahin-jafarzadeh-3a3772331/
 
 ## 🙏 Təşəkkürlər
 
