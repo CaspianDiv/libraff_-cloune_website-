@@ -4,7 +4,7 @@ Modern və funksional kitab mağazası saytının klonudur. Bu proyekt müasir w
 
 ## 🚀 Canlı Demo
 
-[[[Demo linki buraya əlavə edin]](https://libraff.netlify.app)]
+[(https://libraff.netlify.app)]
 
 ## 📋 Xüsusiyyətlər
 
