@@ -268,11 +268,6 @@ function updateHeartIcons() {
 };
 
 
-
-
-
-
-
 // Kitabları ekranda göstərmək üçün funksiya 
 
 function displayBooks(books) {
@@ -344,7 +339,7 @@ function displayBooks(books) {
                 <p class="text-xs text-gray-500 mt-2">${stockText}</p>
           </div>
         `
-            const bookCards = document.querySelectorAll('.book-card');
+      const bookCards = document.querySelectorAll('.book-card');
     
     bookCards.forEach(card => {
         // Hover zamanı heart ikonunu göstərmək
@@ -406,7 +401,7 @@ function popularWeekBooks() {
             <div class="space-y-2">
               <a href="../details.htm?id=${book.id}"  class="text-lg font-semibold hover:underline">${book.name}</a>
             </div>
-            <button class="bg-[#ef3340] w-32 text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
+            <button onclick="addBasket('${book.id}')" class="bg-[#ef3340] w-32 text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
             <div class="py-5">
                 <span class="font-semibold text-black px-2">${!isNaN(parseFloat(discountPrice)) ? discountPrice + "₼" : "N/A"}</span>
                 <span class="text-gray-400 line-through">${!isNaN(originalPrice) ? originalPrice + "₼" : "N/A"}</span>
@@ -494,7 +489,7 @@ function printAprilBestSellers() {
                 <a href="../details.htm?id=${book.id}"  class="font-semibold text-lg mb-1 hover:underline" title="${book.name}">${book.name}</a>
                 <p class="tetx-gray-600 text-sm mb-2 title="author"">${book.author}</p>
                 <div>
-                    <button  class="bg-[#ef3340] text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
+                    <button  onclick="addBasket('${book.id}')" class="bg-[#ef3340] text-white px-3 py-1 rounded-full  text-sm hover:bg-red-700 transition-colors">Səbətə at</button>
                 </div>
               <div class="py-5">
                 <span class="font-semibold text-black px-2">${!isNaN(parseFloat(discountPrice)) ? discountPrice + "₼" : "N/A"}</span>
