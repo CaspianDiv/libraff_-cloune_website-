@@ -67,15 +67,8 @@ cd libraff-clone
 - Modern CSS Grid və Flexbox
 
 ## 🎯 Gələcək Planlar
-
-- [x] Axtarış funksiyası ✅
-- [x] Seçilmişlər sistemi ✅
-- [x] Səbət funksiyası ✅
 - [ ] Dark/Light mode tema dəyişdirmə
 - [ ] Filtrlə və çeşidləmə
-- [ ] İstifadəçi hesabı sistemi
-- [ ] Ödəniş inteqrasiyası
-- [ ] Admin paneli
 
 ## 📸 Ekran Görüntüləri
 
